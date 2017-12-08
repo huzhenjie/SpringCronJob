@@ -4,6 +4,7 @@ import org.quartz.spi.JobFactory;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
@@ -13,9 +14,9 @@ import java.util.Properties;
 /**
  * Created by scrat on 2017/11/30.
  */
-//@Configuration
+@Configuration
 public class QuartzConfig {
-    public static final String QUARTZ_PROPERTIES_PATH = "/quartz.properties";
+    private static final String QUARTZ_PROPERTIES_PATH = "/quartz.properties";
 
     @Bean
     public JobFactory jobFactory(ApplicationContext applicationContext) {
