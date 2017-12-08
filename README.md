@@ -46,9 +46,7 @@ curl -X DELETE -H "Content-type: application/json" -d '{"jobName":"job_name","jo
 ### Sample
 
 ```
-
-
-
+curl 'http://localhost:8080/job/start_all'
 ```
 
 ## 关闭所有任务
