@@ -1,6 +1,6 @@
-# 基于Spring的定时任务
+# Spring cron job based on quartz-jobs
 
-## 创建任务
+## Create job
 
 [POST] `/job`
 
@@ -8,11 +8,11 @@
 
 | param | type | require | description |
 | --- | :---: | :---: | --- |
-| jobName | string | true | 任务名称 |
-| jobGroupName | string | true | 任务分组名称 |
-| triggerName | string | true | 触发器名称 |
-| triggerGroupName | string | true | 触发器分组名称 |
-| cron | string | true | cron表达式 |
+| jobName | string | true | job name |
+| jobGroupName | string | true | job group name |
+| triggerName | string | true | trigger name |
+| triggerGroupName | string | true | trigger group name |
+| cron | string | true | cron expression |
 
 ### Sample
 
@@ -20,7 +20,7 @@
 curl -X POST -H "Content-type: application/json" -d '{"jobName":"job_name","jobGroupName":"job_group_name","triggerName":"trigger_name","triggerGroupName":"trigger_group_name","cron":"0/3 * * * * ?"}' 'http://localhost:8080/job'
 ```
 
-## 移除任务
+## Remove job
 
 [DELETE] `/job`
 
@@ -28,10 +28,10 @@ curl -X POST -H "Content-type: application/json" -d '{"jobName":"job_name","jobG
 
 | param | type | require | description |
 | --- | :---: | :---: | --- |
-| jobName | string | true | 任务名称 |
-| jobGroupName | string | true | 任务分组名称 |
-| triggerName | string | true | 触发器名称 |
-| triggerGroupName | string | true | 触发器分组名称 |
+| jobName | string | true | job name |
+| jobGroupName | string | true | job group name |
+| triggerName | string | true | trigger name |
+| triggerGroupName | string | true | trigger group name |
 
 ### Sample
 
@@ -39,7 +39,7 @@ curl -X POST -H "Content-type: application/json" -d '{"jobName":"job_name","jobG
 curl -X DELETE -H "Content-type: application/json" -d '{"jobName":"job_name","jobGroupName":"job_group_name","triggerName":"trigger_name","triggerGroupName":"trigger_group_name"}' 'http://localhost:8080/job'
 ```
 
-## 开启所有任务
+## Start all job
 
 [GET] `/job/start_all`
 
@@ -49,7 +49,7 @@ curl -X DELETE -H "Content-type: application/json" -d '{"jobName":"job_name","jo
 curl 'http://localhost:8080/job/start_all'
 ```
 
-## 关闭所有任务
+## Shutdown all job
 
 [GET] `/job/shutdown_all`
 
